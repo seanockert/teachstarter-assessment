@@ -4,14 +4,6 @@ import LikeButton from './LikeButton';
 import '../assets/styles/listing-item.scss';
 
 class Listing extends React.Component {
-
-	componentDidUpdate(){
-		// Manually intecept the browser back button
-		if (this.props.history.action === 'POP') {
-			this.props.history.go('/');
-		}
-  }
-
   render() {
   	const listing = this.props.listing;
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
-import { connect } from 'react-redux'
-import { fetchInitialState, filterList } from '../actions/'
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchInitialState, filterList } from '../actions/';
 
 import Listings from './Listings';
 import Listing from './Listing';
@@ -66,7 +66,7 @@ class App extends React.Component {
 
 			  <footer>
 			  	<div>
-			  		<a href="https://github.com/seanockert/teachstarter-assessment" title="View the source code for this page on Github" target="_blank">View source on Github</a>
+			  		<a href="https://github.com/seanockert/teachstarter-assessment" title="View the source code for this page on Github" target="_blank" rel="noopener noreferrer">View source on Github</a>
 			  	</div>
 			  </footer>
 		  </React.Fragment>
@@ -79,6 +79,6 @@ const mapStateToProps = state => ({
   ...state
 });
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
 
 

@@ -23,7 +23,7 @@ class Search extends React.Component {
 	  return (
 		  <header className="ts-search">
 	      <div>
-			  	<label htmlFor="filter">Filter list ({this.props.count} item{this.props.count != 1 ? 's' : ''})</label>
+			  	<label htmlFor="filter">Filter list ({this.props.count} item{this.props.count !== 1 ? 's' : ''})</label>
 			  	<div>
 				    <input type="text" id="filter" value={this.props.filter} onChange={this.handleChange} />
 				    <IconSearch className="ts-search-icon" />
