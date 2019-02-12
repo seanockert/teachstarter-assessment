@@ -1,7 +1,7 @@
 # Teach Starter Assessment
 
 ## Demo
-[View demo here](https://so-teachstarter-assessment.surge.sh/)
+**[View demo here](https://so-teachstarter-assessment.surge.sh/)**
 
 ## Assessment criteria
 
@@ -30,3 +30,5 @@ Uses React Router to display more information for each listing item when clicked
 Using the Bootstrap library for this task was a bit overkill, so I have opted to write my own CSS for the app in: `/src/assets/styles/`.
 
 However, as an example of using Bootstrap CSS styles, please find a static HTML in this folder: `/bootstrap-html/`.
+
+[View demo of static Bootstrap layout here](https://so-teachstarter-assessment.surge.sh/bootstrap-html/)
