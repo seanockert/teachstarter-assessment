@@ -11,6 +11,10 @@ const listings = (state = [], action) => {
         isFetching: false
       });
     case 'UPDATE_LIKES':
+      // Get the array index for the PUT request
+      // @todo simplify this eeducer
+      const index = state.listings.findIndex(listing => listing.id === action.id);
+      
       const updatedListings = state.listings.map(listing =>
         listing.id === action.id ? { ...listing, likes: listing.likes + 1 } : listing
       )
@@ -21,16 +25,19 @@ const listings = (state = [], action) => {
       )
 
       // Update the data on the server
-      fetch(`${dataEndpoint}/listings/`, {
+      fetch(`${dataEndpoint}/listings/${action.id}/likes`, {
         headers: { 'Content-type': 'application/json' },
-        method: 'POST',
-        body: JSON.stringify(updatedListings)
+        method: 'PUT',
+        body: updatedListings[index].likes
       })
-      .then(response => response.json())
       .then(data => {
         // Data updated on server, update state here?
         console.log('Updated likes');
-      });
+      })
+      .catch(function() {
+        // @todo give visual feedback if update fails
+        console.log('Handle error');
+      });   
 
       // Update state
       return Object.assign({}, state, {
