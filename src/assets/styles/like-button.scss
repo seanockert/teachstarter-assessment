@@ -4,6 +4,7 @@
 	margin-left: $base-padding;
 	border: none;
 	background: none;
+	cursor: pointer;
 	font-size: 1em;
 	display: flex;
 	height: 1.6rem;
@@ -17,12 +18,12 @@
 	}
 
 	svg {
-		transition: all 0.25s cubic-bezier(1,-0.26,.06,1.35);
+		transition: all 0.35s cubic-bezier(1,-0.26,.06,1.35);
 	}
 
 	&:hover, &:focus {
 		svg {
-			transform: scale(1.1);
+			transform: scale(1.2);
 		}
 	}
 	&:active {

@@ -50,3 +50,11 @@ footer {
 	margin-top: $base-padding * 3;
 	font-size: 0.875rem;
 }
+
+@media screen and (max-width: 40rem) {
+	section,
+	footer,
+	header {
+		padding: $base-padding;
+	}	
+}

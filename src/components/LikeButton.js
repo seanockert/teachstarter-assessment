@@ -10,7 +10,7 @@ const LikeButton = props => {
 
   return (
   	<React.Fragment>
-	  <button className="ts-like-button" onClick={() => dispatch(updateLikes(id))} title="Like this item">
+	  <button className="ts-like-button" onClick={(e) => { e.preventDefault(); dispatch(updateLikes(id))}} title="Like this item">
 	  	<span>{likes}</span>
 	  	<IconLike />
 	  </button>

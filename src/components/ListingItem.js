@@ -8,19 +8,18 @@ const ListingItem = props => {
 
   return (
 	  <li>
+	  <Link to={`/listing/${listing.id}`} title="View details">
 	  	<figure>
-	    	<Link to={`/listing/${listing.id}`} title="View details">
-	    		<img src={`/images/listings/${listing.img}`} alt="" />
-	    	</Link>
+	    	<img src={`/images/listings/${listing.img}`} alt="" />
     	</figure>
     	<div>
-	    	<h3><Link to={`/listing/${listing.id}`} title="View details">{listing.title}</Link></h3>
+	    	<h3>{listing.title}</h3>
 	    	<p>{listing.summary}</p>
 	    </div>
 	    <LikeButton likes={listing.likes} id={listing.id} />
+	    </Link>
     </li>
 	)
-
 }
 
 export default ListingItem;

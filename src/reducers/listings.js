@@ -29,7 +29,7 @@ const listings = (state = [], action) => {
       .then(response => response.json())
       .then(data => {
         // Data updated on server, update state here?
-        console.log('Updated likes'); 
+        console.log('Updated likes');
       });
 
       // Update state

@@ -1,26 +1,36 @@
 @import 'variables';
 
-.ts-listings li, .ts-listing {
-	align-items: top;
+.ts-listings li a, 
+.ts-listing {
 	display: flex;
 	padding: $base-padding * 2 0;
-	//box-shadow: $box-shadow;
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.25s ease-out;
 
 	img {
 		width: auto;
 		height: 100px;
 		margin-right: $base-padding;
+		transition: all 0.25s ease-out;
 	}
 
 	h2, h3 {
 		margin: 0;
+		transition: all 0.15s ease-out;
+	}
+}
 
-		a {
-			text-decoration: none;
+.ts-listings li a {
+	&:hover, &:focus {
 
-			&:hover, &:focus {
-				text-decoration: underline;
-			}
+		img {
+			transform: scale(1.1);
+		}
+
+		h2, h3 {
+			color: $color-dark-blue;
+			text-decoration: underline;
 		}
 	}
 }
