@@ -1,0 +1,32 @@
+@import 'variables';
+
+.ts-search {
+	background-color: $color-light-green;
+
+	label {
+		color: $color-green;
+		font-size: 1rem;
+		font-weight: bold;
+		margin: 0;
+	}
+
+	div {
+		position: relative;
+	}
+
+	input {
+		font-size: 1.2rem;
+		padding: $base-padding;
+		padding-left: $base-padding * 3.5;
+		margin-top: $base-padding/2;
+		width: 100%;
+		border: 1px solid $color-green;
+	}
+}
+
+.ts-search-icon {
+	position: absolute;
+	left: $base-padding;
+	top: 1.3rem;
+	opacity: 0.5;
+}

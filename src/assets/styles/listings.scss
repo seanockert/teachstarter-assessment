@@ -1,0 +1,24 @@
+@import 'variables';
+
+.ts-listings {
+	list-style: none;
+	padding: 0;
+
+	li.ts-no-items {
+		font-style: italic;
+	}
+}
+
+button.ts-link-button {
+	border: none;
+	background: none;
+	font-size: inherit;
+	outline: none;
+	padding: 0 $base-padding/2;
+	-webkit-appearance: none;
+
+	&:hover, &:focus {
+		text-decoration: underline;
+	}
+}
+

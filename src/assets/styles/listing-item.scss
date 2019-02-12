@@ -1,0 +1,26 @@
+@import 'variables';
+
+.ts-listings li, .ts-listing {
+	align-items: top;
+	display: flex;
+	padding: $base-padding * 2 0;
+	//box-shadow: $box-shadow;
+
+	img {
+		width: auto;
+		height: 100px;
+		margin-right: $base-padding;
+	}
+
+	h2, h3 {
+		margin: 0;
+
+		a {
+			text-decoration: none;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+}
