@@ -7,32 +7,12 @@ import Listings from './Listings';
 import Listing from './Listing';
 import '../assets/styles/app.scss';
 
-// API endpoint
-const dataEndpoint = 'https://www.jsonstore.io/35da602c6c52fa78abdf1617b197ed95d03f1c874966986ca6585ee939620496';
-
 // Main app entry point
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listings: [],
-      filteredListings: [],
-      filter: '',
-      isFetching: true
-    };
-  }
 
 	componentDidMount() {
-	  // Populate the data from a JSON endpoint before component mounts
-	 	fetch(dataEndpoint, {
-	    headers: { 'Content-type': 'application/json' },
-	    method: 'GET'
-	  })
-	  .then(response => response.json())
-	  .then(data => {
-	  	// Recieved data from endpoint
-	    this.props.dispatch(fetchInitialState(data.result.listings));
-	  });
+		// Populate the data from a JSON endpoint before component mounts
+		this.props.dispatch(fetchInitialState());
 	}
 
   // Clear the search by passing an empty filter query
@@ -51,7 +31,7 @@ class App extends React.Component {
 	  }
 
   	return (
-	  	<React.Fragment>
+	  	<>
 				<Switch>
 			    <Route 
 			    	path='/listing/:id'
@@ -69,7 +49,7 @@ class App extends React.Component {
 			  		<a href="https://github.com/seanockert/teachstarter-assessment" title="View the source code for this page on Github" target="_blank" rel="noopener noreferrer">View source on Github</a>
 			  	</div>
 			  </footer>
-		  </React.Fragment>
+		  </>
 	  )
 	}
 }

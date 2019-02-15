@@ -1,18 +1,30 @@
+// API endpoint used for fetch calls
 const dataEndpoint = 'https://www.jsonstore.io/35da602c6c52fa78abdf1617b197ed95d03f1c874966986ca6585ee939620496';
 
 const listings = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_INITIAL_STATE':
-      // @todo: move fetch call into here (promise?)
-    	return Object.assign({}, state, {
-        listings: action.listings,
-        filteredListings: action.listings,
+      // Populate the data from a JSON endpoint before component mounts
+      return fetch(dataEndpoint, {
+        headers: { 'Content-type': 'application/json' },
+        method: 'GET'
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Use the asyncDispatch middleware to dispatch another action cf. Elm architecture
+        action.asyncDispatch({ type: 'UPDATE_STATE', value: data.result.listings });
+      });
+    case 'UPDATE_STATE':
+      // Update the state. Called from FETCH_INITIAL_STATE
+      return Object.assign({}, state, {
+        listings: action.value,
+        filteredListings: action.value,
         filter: '',
         isFetching: false
       });
     case 'UPDATE_LIKES':
       // Get the array index for the PUT request
-      // @todo simplify this eeducer
+      // @todo simplify this
       const index = state.listings.findIndex(listing => listing.id === action.id);
       
       const updatedListings = state.listings.map(listing =>

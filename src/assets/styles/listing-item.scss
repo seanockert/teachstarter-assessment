@@ -9,7 +9,7 @@
 	transition: all 0.25s ease-out;
 
 	img {
-		width: auto;
+		width: 100px;
 		height: 100px;
 		margin-right: $base-padding;
 		transition: all 0.25s ease-out;
@@ -31,6 +31,16 @@
 		h2, h3 {
 			color: $color-dark-blue;
 			text-decoration: underline;
+		}
+	}
+}
+
+@media screen and (max-width: 40rem) {
+	.ts-listing {
+		flex-direction: column;
+
+		img {
+			margin-bottom: $base-padding;
 		}
 	}
 }

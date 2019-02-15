@@ -1,5 +1,9 @@
-export const fetchInitialState = listings => ({
-  type: 'FETCH_INITIAL_STATE',
+export const fetchInitialState = () => ({
+  type: 'FETCH_INITIAL_STATE'
+});
+
+export const updateState = listings => ({
+  type: 'UPDATE_STATE',
   listings
 });
 
