@@ -33,3 +33,23 @@ Using the Bootstrap library for this task was a bit overkill, so I have opted to
 However, as an example of using Bootstrap CSS styles, please find a static HTML in this folder: `/bootstrap-html/`.
 
 [View demo of static Bootstrap layout here](https://so-teachstarter-assessment.surge.sh/bootstrap-html/)
+
+---
+
+## Project setup
+
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+```
+npm run start
+```
+
+### Compiles and minifies for production
+
+```
+npm run build
+```
