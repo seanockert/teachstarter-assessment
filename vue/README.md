@@ -7,7 +7,7 @@ Includes a few extra features:
 - Slide in/out animation on route change
 - Animate list items when filtering
 - Skeleton placeholder template before data is loaded
-- Likes over 1000 formatted as 1k etc
+- Likes over 1000 formatted as 1k, 2k, 3.5k etc
 - Debounce search input
 
 ## Demo
@@ -32,16 +32,4 @@ npm run serve
 
 ```
 npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
 ```
