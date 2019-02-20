@@ -10,8 +10,8 @@ import App from './components/App';
 ReactDOM.render(
 	<Provider store={configureStore()}>
 		<ConnectedRouter history={history}>
-	    <App />
-	  </ConnectedRouter>
-  </Provider>
-, document.getElementById('app'));
-
+			<App />
+		</ConnectedRouter>
+	</Provider>,
+	document.getElementById('app')
+);

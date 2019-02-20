@@ -1,56 +1,66 @@
 @import 'variables';
 
 .ts-like-button {
-	margin-left: $base-padding;
-	border: none;
-	background: none;
-	cursor: pointer;
-	font-size: 1em;
-	display: flex;
-	height: 1.6rem;
-	align-items: center;
-	outline: none;
-	position: relative;
-	-webkit-appearance: none;
+  margin-left: $base-padding;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  height: 1.6rem;
+  align-items: center;
+  outline: none;
+  position: relative;
+  -webkit-appearance: none;
 
-	> span {
-		font-weight: bold;
-		padding-right: $base-padding/2;
-	}
+  > span {
+    font-weight: bold;
+    padding-right: $base-padding/2;
+    transition: all 0.15s cubic-bezier(1, -0.26, 0.06, 1.35);
+  }
 
-	svg {
-		transition: all 0.35s cubic-bezier(1,-0.26,.06,1.35);
-	}
+  svg {
+    transition: all 0.35s cubic-bezier(1, -0.26, 0.06, 1.35);
+  }
 
-	&:hover, &:focus {
-		svg {
-			transform: scale(1.2);
-		}
-	}
-	&:active {
-		svg {
-			transform: scale(0.9);
-		}
-	}
+  &.active {
+    span {
+      color: $color-green;
+      transform: scale(1.4);
+    }
+  }
 
-	// Tooltip
+  &:hover,
+  &:focus {
+    svg {
+      transform: scale(1.2);
+    }
+  }
+  &:active {
+    svg {
+      transform: scale(0.9);
+    }
+  }
+
+  // Tooltip
   &:after {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    bottom: -52px;
+    color: #fff;
     content: attr(data-tooltip);
     display: block;
-    position: absolute;
-    bottom: -52px;
-    width: 90px;
-    left: 50%;
-    color: #fff;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
     font-size: 0.875rem;
-    text-transform: none;
-    padding: $base-padding/2;
-    border-radius: 5px;
+    margin-right: -45px;
     opacity: 0;
+    padding: $base-padding/2;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: none;
     transition: all 0.2s 0.4s ease-out;
     transform: translate3d(-50%, 5px, 0);
+    width: 90px;
     z-index: 999;
   }
 

@@ -13,7 +13,9 @@ footer,
 header {
 	padding: $base-padding * 2;
 
-	> div, > ul, > header {
+	> div,
+	> ul,
+	> header {
 		max-width: 52rem;
 		margin: 0 auto;
 	}
@@ -32,15 +34,17 @@ img {
 	width: auto;
 }
 
-p {
+p,
+li {
 	line-height: 1.5;
 }
 
-a, 
+a,
 button.ts-link-button {
 	color: $color-blue;
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		color: $color-dark-blue;
 	}
 }
@@ -51,10 +55,77 @@ footer {
 	font-size: 0.875rem;
 }
 
+// Router transition
+/*
+.fade-enter {
+	opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+	opacity: 1;
+	transition: opacity 0.35s ease-in;
+}
+
+.fade-exit {
+	opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+	opacity: 0.01;
+	transition: opacity 0.35s ease-in;
+}
+*/
+
+// When page loaded, fade in
+.slide-left-appear {
+	opacity: 0;
+	transform: translate3d(-2em, 0, 0);
+}
+
+.slide-left-appear.slide-left-appear-active {
+	opacity: 1;
+	transition: all 0.35s cubic-bezier(0.55, 0, 0.1, 1);
+	transform: translate3d(0, 0, 0);
+}
+
+// For main router transitions
+.slide-left-enter-active,
+.slide-left-exit-active,
+.slide-right-enter-active,
+.slide-right-exit-active {
+	transition-duration: 0.35s;
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+	overflow: hidden;
+}
+
+.slide-left-enter,
+.slide-right-exit-active {
+	opacity: 0;
+	transform: translate(2em, 0);
+}
+
+.slide-left-exit-active,
+.slide-right-enter {
+	opacity: 0;
+	transform: translate(-2em, 0);
+}
+
+.transition-group {
+	position: relative;
+}
+
+.route-section {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
 @media screen and (max-width: 40rem) {
 	section,
 	footer,
 	header {
 		padding: $base-padding;
-	}	
+	}
 }

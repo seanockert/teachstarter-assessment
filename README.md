@@ -1,6 +1,7 @@
 # Teach Starter Assessment
 
 ## Demo
+
 **[View demo here](https://so-teachstarter-assessment.surge.sh/)**
 
 ## Assessment criteria
@@ -13,7 +14,7 @@ Data is stored in a JSON format on jsonstore.io and updated through an API.
 
 Fetch request to load the data from the endpoint on main component DidMount event, then render as a list.
 
-**3. Provide a search field that interacts with the data** 
+**3. Provide a search field that interacts with the data**
 
 Items in the list can be filtered based on search query. Filter searchs the _title_ and _summary_ of items.
 

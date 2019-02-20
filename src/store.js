@@ -23,8 +23,7 @@ const asyncDispatchMiddleware = store => next => action => {
     }
   }
 
-  const actionWithAsyncDispatch =
-    Object.assign({}, action, { asyncDispatch });
+  const actionWithAsyncDispatch = Object.assign({}, action, { asyncDispatch });
 
   const res = next(actionWithAsyncDispatch);
 
@@ -34,9 +33,9 @@ const asyncDispatchMiddleware = store => next => action => {
   return res;
 };
 
-export const history = createBrowserHistory()
+export const history = createBrowserHistory();
 
-export default function configureStore(initialState={}) {
+export default function configureStore(initialState = {}) {
   return createStore(
     createRootReducer(history),
     initialState,
